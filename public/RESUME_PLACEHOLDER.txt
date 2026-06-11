@@ -1,0 +1,12 @@
+resume.pdf goes here.
+
+Commit your resume as public/resume.pdf (exact name). The sync workflow
+(.github/workflows/sync.yml) detects pushes to that path, sends the PDF to
+Gemini, and updates src/content/dynamic.json (experience, skills, education,
+certifications) — no manual editing needed.
+
+Until the file exists:
+- the "Resume" download button on the site will 404 (expected)
+- the sync script skips resume extraction cleanly and keeps existing data
+
+Delete this placeholder once the real resume.pdf is added.

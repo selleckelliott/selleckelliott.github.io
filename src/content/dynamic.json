@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-06-11T17:00:00.000Z",
+  "projects": [
+    {
+      "name": "freightbid_agent",
+      "html_url": "https://github.com/selleckelliott/freightbid_agent",
+      "description": "Hybrid AI decision system for freight dispatch. Combines rule-based optimization, ML prediction, and agent planning to recommend profitable loads, minimize deadhead, and generate bid strategies for hotshot trucking. Built as an AI engineering portfolio project with real-world constraints.",
+      "language": "Python",
+      "topics": [],
+      "stargazers_count": 0,
+      "homepage": null,
+      "updated_at": "2026-06-10T22:40:18Z"
+    },
+    {
+      "name": "StockPriceMonitorySystem",
+      "html_url": "https://github.com/selleckelliott/StockPriceMonitorySystem",
+      "description": "Observer Pattern Process",
+      "language": "C#",
+      "topics": [],
+      "stargazers_count": 0,
+      "homepage": null,
+      "updated_at": "2025-01-10T17:54:44Z"
+    },
+    {
+      "name": "Archeology",
+      "html_url": "https://github.com/selleckelliott/Archeology",
+      "description": "Archeology App",
+      "language": "JavaScript",
+      "topics": [],
+      "stargazers_count": 0,
+      "homepage": null,
+      "updated_at": "2024-08-13T02:41:31Z"
+    },
+    {
+      "name": "BodyBuilding",
+      "html_url": "https://github.com/selleckelliott/BodyBuilding",
+      "description": "Body building application for book adaptation",
+      "language": null,
+      "topics": [],
+      "stargazers_count": 0,
+      "homepage": null,
+      "updated_at": "2024-07-15T20:45:34Z"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Software Developer — C# / .NET",
+      "company": "Independent & portfolio work",
+      "location": "",
+      "start": "2024",
+      "end": "Present",
+      "highlights": [
+        "Completed the TrueCoders software development program (C#/.NET, SQL, web fundamentals).",
+        "Built a portfolio of C#/.NET applications focused on classic design patterns, plus an AI-powered freight dispatch decision system in Python.",
+        "Placeholder entry — the full work history is extracted automatically from resume.pdf once it is committed."
+      ]
+    },
+    {
+      "title": "Business & Financial Analysis",
+      "company": "Prior professional background",
+      "location": "",
+      "start": "",
+      "end": "2024",
+      "highlights": [
+        "Professional background in business and financial analysis before transitioning into software development.",
+        "Placeholder entry — details are filled in automatically from resume.pdf."
+      ]
+    }
+  ],
+  "skills": [],
+  "education": [
+    {
+      "institution": "TrueCoders",
+      "credential": "Software Development Program",
+      "year": "2024",
+      "details": "Intensive training in C#, .NET, SQL, and web fundamentals."
+    }
+  ],
+  "certifications": []
+}

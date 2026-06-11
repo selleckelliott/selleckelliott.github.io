@@ -5,15 +5,16 @@
  * Sources:
  *   1. GitHub REST API — public repos for GITHUB_USER tagged with the
  *      `portfolio` topic (uses GITHUB_TOKEN when present, anonymous otherwise).
- *   2. Gemini — structured extraction of public/resume.pdf into
+ *   2. GitHub Models — structured extraction of text from public/resume.pdf
+ *      (extracted locally via unpdf) into
  *      { experience, skills, education, certifications }.
  *
  * Failure policy: never write empty/broken data over good data. Each section
  * falls back to the existing dynamic.json content if its source is missing,
- * fails, or returns nothing useful. Missing GEMINI_API_KEY or resume.pdf are
+ * fails, or returns nothing useful. Missing GITHUB_TOKEN or resume.pdf are
  * clean skips, not errors. The file is only rewritten when content changed.
  *
- * Requires Node 20+ (native fetch). No runtime dependencies.
+ * Requires Node 20+ (native fetch). Only dev dependency: unpdf (PDF text).
  */
 import { readFile, writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
@@ -26,7 +27,9 @@ const RESUME_PATH = path.join(ROOT, 'public', 'resume.pdf')
 
 const GITHUB_USER = 'selleckelliott'
 const PORTFOLIO_TOPIC = 'portfolio'
-const GEMINI_MODEL = 'gemini-2.5-flash-lite'
+const MODELS_URL = 'https://models.github.ai/inference/chat/completions'
+const MODELS_MODEL = 'openai/gpt-4o-mini'
+const MIN_RESUME_TEXT_CHARS = 200
 
 const EMPTY_CONTENT = {
   generatedAt: null,
@@ -37,11 +40,11 @@ const EMPTY_CONTENT = {
   certifications: [],
 }
 
-const EXTRACTION_PROMPT = `You are a strict data-extraction engine. Extract structured resume data from the attached PDF.
+const EXTRACTION_PROMPT = `You are a strict data-extraction engine. Extract structured resume data from the plain text below (extracted from a resume PDF).
 
 Rules:
-- Use ONLY information explicitly present in the PDF. Never infer, embellish, or invent anything.
-- If a field is not present in the PDF, use an empty string "" (or omit the entry entirely).
+- Use ONLY information explicitly present in the text. Never infer, embellish, or invent anything.
+- If a field is not present in the text, use an empty string "" (or omit the entry entirely).
 - Copy bullet points nearly verbatim; you may trim whitespace and trailing punctuation only.
 - Dates as short strings such as "Jan 2023" or "2023"; use "Present" for current roles.
 - Output ONLY valid JSON matching exactly this schema — no markdown, no commentary:
@@ -55,7 +58,10 @@ Rules:
     { "institution": "", "credential": "", "year": "", "details": "" }
   ],
   "certifications": [""]
-}`
+}
+
+Resume text:
+`
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -118,12 +124,12 @@ async function fetchProjects() {
 }
 
 // ---------------------------------------------------------------------------
-// Source 2: Gemini resume extraction
+// Source 2: resume extraction (local PDF text -> GitHub Models)
 // ---------------------------------------------------------------------------
 
 async function extractResume() {
-  if (!process.env.GEMINI_API_KEY) {
-    console.log('- GEMINI_API_KEY not set — skipping resume extraction (keeping existing data).')
+  if (!process.env.GITHUB_TOKEN) {
+    console.log('- GITHUB_TOKEN not set — skipping resume extraction (keeping existing data).')
     return null
   }
   if (!existsSync(RESUME_PATH)) {
@@ -131,39 +137,43 @@ async function extractResume() {
     return null
   }
 
+  // Step a: extract plain text locally — the PDF itself is never uploaded.
+  const { extractText } = await import('unpdf')
   const pdf = await readFile(RESUME_PATH)
-  const res = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-goog-api-key': process.env.GEMINI_API_KEY,
-      },
-      body: JSON.stringify({
-        contents: [
-          {
-            parts: [
-              { inline_data: { mime_type: 'application/pdf', data: pdf.toString('base64') } },
-              { text: EXTRACTION_PROMPT },
-            ],
-          },
-        ],
-        generationConfig: { temperature: 0, responseMimeType: 'application/json' },
-      }),
+  const { text } = await extractText(new Uint8Array(pdf), { mergePages: true })
+  const resumeText = (text ?? '').trim()
+  if (resumeText.length < MIN_RESUME_TEXT_CHARS) {
+    console.log(
+      `- Resume text too short (${resumeText.length} chars < ${MIN_RESUME_TEXT_CHARS}) — skipping extraction (keeping existing data).`,
+    )
+    return null
+  }
+
+  // Step b: structured extraction via GitHub Models.
+  const res = await fetch(MODELS_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/vnd.github+json',
+      Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+      'X-GitHub-Api-Version': '2022-11-28',
     },
-  )
+    body: JSON.stringify({
+      model: MODELS_MODEL,
+      temperature: 0,
+      response_format: { type: 'json_object' },
+      messages: [{ role: 'user', content: EXTRACTION_PROMPT + resumeText }],
+    }),
+  })
   if (!res.ok) {
-    throw new Error(`Gemini API ${res.status}: ${(await res.text()).slice(0, 300)}`)
+    throw new Error(`GitHub Models API ${res.status}: ${(await res.text()).slice(0, 300)}`)
   }
 
   const data = await res.json()
-  const text = (data?.candidates?.[0]?.content?.parts ?? [])
-    .map((p) => p.text ?? '')
-    .join('')
+  const content = (data?.choices?.[0]?.message?.content ?? '')
     .replace(/^\s*```(?:json)?\s*|\s*```\s*$/g, '')
-  if (!text.trim()) throw new Error('Gemini returned an empty response.')
-  return JSON.parse(text)
+  if (!content.trim()) throw new Error('GitHub Models returned an empty response.')
+  return JSON.parse(content)
 }
 
 /** Validate one extracted section; returns a clean array or null if unusable. */

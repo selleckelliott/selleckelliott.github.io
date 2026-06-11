@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  /* Single knob for the site's accent color. */
+  --color-accent: #22d3ee;
+}
+
+body {
+  @apply bg-zinc-950 text-zinc-300 antialiased;
+}
+
+::selection {
+  @apply bg-accent/30 text-white;
+}

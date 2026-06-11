@@ -1,45 +1,29 @@
 {
-  "generatedAt": "2026-06-11T17:00:00.000Z",
+  "generatedAt": "2026-06-11T18:04:33.026Z",
   "projects": [
+    {
+      "name": "LatinLearningAppPrototype",
+      "html_url": "https://github.com/selleckelliott/LatinLearningAppPrototype",
+      "description": "An app for Second Grade Homeschooled Children to learn Latin",
+      "language": "TypeScript",
+      "topics": [
+        "portfolio"
+      ],
+      "stargazers_count": 0,
+      "homepage": null,
+      "updated_at": "2026-06-11T18:03:39Z"
+    },
     {
       "name": "freightbid_agent",
       "html_url": "https://github.com/selleckelliott/freightbid_agent",
       "description": "Hybrid AI decision system for freight dispatch. Combines rule-based optimization, ML prediction, and agent planning to recommend profitable loads, minimize deadhead, and generate bid strategies for hotshot trucking. Built as an AI engineering portfolio project with real-world constraints.",
       "language": "Python",
-      "topics": [],
+      "topics": [
+        "portfolio"
+      ],
       "stargazers_count": 0,
       "homepage": null,
-      "updated_at": "2026-06-10T22:40:18Z"
-    },
-    {
-      "name": "StockPriceMonitorySystem",
-      "html_url": "https://github.com/selleckelliott/StockPriceMonitorySystem",
-      "description": "Observer Pattern Process",
-      "language": "C#",
-      "topics": [],
-      "stargazers_count": 0,
-      "homepage": null,
-      "updated_at": "2025-01-10T17:54:44Z"
-    },
-    {
-      "name": "Archeology",
-      "html_url": "https://github.com/selleckelliott/Archeology",
-      "description": "Archeology App",
-      "language": "JavaScript",
-      "topics": [],
-      "stargazers_count": 0,
-      "homepage": null,
-      "updated_at": "2024-08-13T02:41:31Z"
-    },
-    {
-      "name": "BodyBuilding",
-      "html_url": "https://github.com/selleckelliott/BodyBuilding",
-      "description": "Body building application for book adaptation",
-      "language": null,
-      "topics": [],
-      "stargazers_count": 0,
-      "homepage": null,
-      "updated_at": "2024-07-15T20:45:34Z"
+      "updated_at": "2026-06-11T18:03:38Z"
     }
   ],
   "experience": [

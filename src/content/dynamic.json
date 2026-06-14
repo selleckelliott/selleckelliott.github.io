@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-06-11T18:04:33.026Z",
+  "generatedAt": "2026-06-14T05:00:09.899Z",
   "projects": [
+    {
+      "name": "freightbid_agent",
+      "html_url": "https://github.com/selleckelliott/freightbid_agent",
+      "description": "Hybrid AI decision system for freight dispatch. Combines rule-based optimization, ML prediction, and agent planning to recommend profitable loads, minimize deadhead, and generate bid strategies for hotshot trucking. Built as an AI engineering portfolio project with real-world constraints.",
+      "language": "Python",
+      "topics": [
+        "portfolio"
+      ],
+      "stargazers_count": 0,
+      "homepage": null,
+      "updated_at": "2026-06-11T19:26:24Z"
+    },
     {
       "name": "LatinLearningAppPrototype",
       "html_url": "https://github.com/selleckelliott/LatinLearningAppPrototype",
@@ -12,18 +24,6 @@
       "stargazers_count": 0,
       "homepage": null,
       "updated_at": "2026-06-11T18:03:39Z"
-    },
-    {
-      "name": "freightbid_agent",
-      "html_url": "https://github.com/selleckelliott/freightbid_agent",
-      "description": "Hybrid AI decision system for freight dispatch. Combines rule-based optimization, ML prediction, and agent planning to recommend profitable loads, minimize deadhead, and generate bid strategies for hotshot trucking. Built as an AI engineering portfolio project with real-world constraints.",
-      "language": "Python",
-      "topics": [
-        "portfolio"
-      ],
-      "stargazers_count": 0,
-      "homepage": null,
-      "updated_at": "2026-06-11T18:03:38Z"
     }
   ],
   "experience": [

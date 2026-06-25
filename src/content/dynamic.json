@@ -1,17 +1,29 @@
 {
-  "generatedAt": "2026-06-21T05:08:55.502Z",
+  "generatedAt": "2026-06-25T20:06:09.682Z",
   "projects": [
     {
       "name": "freightbid_agent",
       "html_url": "https://github.com/selleckelliott/freightbid_agent",
-      "description": "Hybrid AI decision system for freight dispatch. Combines rule-based optimization, ML prediction, and agent planning to recommend profitable loads, minimize deadhead, and generate bid strategies for hotshot trucking. Built as an AI engineering portfolio project with real-world constraints.",
+      "description": "Hybrid AI decision engine for hotshot freight dispatch and bidding - rule-based scoring, OR-Tools route optimization, calibrated ML win/payment models, and risk-aware EV bidding. Explainable, benchmarked, production-hardened. AI-engineering portfolio project (Phases 1-7 complete, 556 tests).",
       "language": "Python",
       "topics": [
-        "portfolio"
+        "calibration",
+        "decision-support",
+        "fastapi",
+        "freight",
+        "hexagonal-architecture",
+        "logistics",
+        "machine-learning",
+        "optimization",
+        "or-tools",
+        "portfolio",
+        "python",
+        "scikit-learn",
+        "simulation"
       ],
       "stargazers_count": 0,
       "homepage": null,
-      "updated_at": "2026-06-19T16:55:45Z"
+      "updated_at": "2026-06-25T00:02:04Z"
     },
     {
       "name": "LatinLearningAppPrototype",
@@ -28,37 +40,76 @@
   ],
   "experience": [
     {
-      "title": "Software Developer — C# / .NET",
-      "company": "Independent & portfolio work",
-      "location": "",
+      "title": "Core Service Developer",
+      "company": "GoldPoint Systems",
+      "location": "Orem, UT",
       "start": "2024",
       "end": "Present",
       "highlights": [
-        "Completed the TrueCoders software development program (C#/.NET, SQL, web fundamentals).",
-        "Built a portfolio of C#/.NET applications focused on classic design patterns, plus an AI-powered freight dispatch decision system in Python.",
-        "Placeholder entry — the full work history is extracted automatically from resume.pdf once it is committed."
+        "Designed and deployed production REST APIs supporting loan servicing, payments, compliance, and litigation workflows in a regulated fintech environment.",
+        "Delivered a backend feature generating USD 30K in revenue while reducing downstream legal risk for clients.",
+        "Refactored duplicated logic into shared abstractions, reducing future development time by approximately 85 percent across related services.",
+        "Developed Salesforce-integrated APIs enabling real-time synchronization of customer payment data and account updates across systems.",
+        "Resolved complex edge-case defects identified in QA and production, improving system stability and reducing recurring failures.",
+        "Worked across backend services, database logic, QA workflows, and product requirements to deliver reliable features in sprint-based development."
       ]
     },
     {
-      "title": "Business & Financial Analysis",
-      "company": "Prior professional background",
+      "title": "Financial Advisor",
+      "company": "CUSO Financial",
       "location": "",
-      "start": "",
+      "start": "2022",
       "end": "2024",
       "highlights": [
-        "Professional background in business and financial analysis before transitioning into software development.",
-        "Placeholder entry — details are filled in automatically from resume.pdf."
+        "Grew assets under management by USD 6MM in six months through portfolio strategy, client trust-building, and disciplined follow-up.",
+        "Built strong working knowledge of financial systems, risk management, client data, and compliance expectations.",
+        "Transitioned into software engineering with domain experience in financial services and a practical understanding of user needs in regulated industries."
       ]
     }
   ],
-  "skills": [],
+  "skills": [
+    "C Sharp",
+    ".NET",
+    "SQL",
+    "Python",
+    "REST APIs",
+    "API integrations",
+    "FastAPI",
+    "service-layer architecture",
+    "backend validation",
+    "Domain-Driven Design",
+    "SOLID",
+    "modular systems",
+    "design patterns",
+    "event-driven concepts",
+    "SQL Server",
+    "PostgreSQL",
+    "MySQL",
+    "ML-assisted scoring",
+    "simulation",
+    "route optimization",
+    "OR-Tools",
+    "benchmark harnesses",
+    "Git",
+    "Swagger",
+    "Postman",
+    "Docker",
+    "Azure DevOps",
+    "Render",
+    "Vercel",
+    "CI/CD exposure",
+    "automated testing workflows",
+    "technical documentation"
+  ],
   "education": [
     {
-      "institution": "TrueCoders",
-      "credential": "Software Development Program",
-      "year": "2024",
-      "details": "Intensive training in C#, .NET, SQL, and web fundamentals."
+      "institution": "Western Governors University",
+      "credential": "Bachelor’s - Business Marketing Management",
+      "year": "2019",
+      "details": ""
     }
   ],
-  "certifications": []
+  "certifications": [
+    "Microsoft Certification 2025 Azure AI Fundamentals AI-900"
+  ]
 }

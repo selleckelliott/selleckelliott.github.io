@@ -1,27 +1,41 @@
 import Section from './Section'
-import { dynamic, site } from '../content'
+
+const skillGroups = [
+  {
+    title: 'Backend systems',
+    description:
+      'I build C#/.NET services with ASP.NET Core, SQL-backed domain logic, and REST APIs that keep business rules clear.',
+  },
+  {
+    title: 'AI and data workflows',
+    description:
+      'I use Python and FastAPI for simulation, scoring, optimization, and OpenAI tool-calling workflows with practical guardrails.',
+  },
+  {
+    title: 'Frontend delivery',
+    description:
+      'I ship TypeScript and React interfaces with responsive layouts, Tailwind styling, and Vercel-ready deployment paths.',
+  },
+  {
+    title: 'Engineering practice',
+    description:
+      'I lean on Git, Docker, Swagger, Postman, CI/CD habits, automated tests, and documentation to make work easier to maintain.',
+  },
+]
 
 export default function Skills() {
-  const seen = new Set<string>()
-  const skills = [...site.baselineSkills, ...dynamic.skills].filter((skill) => {
-    const key = skill.trim().toLowerCase()
-    if (!key || seen.has(key)) return false
-    seen.add(key)
-    return true
-  })
-
   return (
     <Section id="skills" kicker="Skills" title="What I work with">
-      <ul className="flex flex-wrap gap-3">
-        {skills.map((skill) => (
-          <li
-            key={skill}
-            className="rounded-full border border-zinc-700 bg-zinc-900/70 px-4 py-1.5 text-sm text-zinc-300 transition hover:border-accent hover:text-accent"
-          >
-            {skill}
-          </li>
+      <div className="grid gap-px overflow-hidden rounded-xl border border-zinc-800 bg-zinc-800 sm:grid-cols-2">
+        {skillGroups.map((group) => (
+          <section key={group.title} className="bg-zinc-950 p-5 sm:p-6">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-accent">
+              {group.title}
+            </h3>
+            <p className="mt-3 text-sm leading-6 text-zinc-300">{group.description}</p>
+          </section>
         ))}
-      </ul>
+      </div>
     </Section>
   )
 }

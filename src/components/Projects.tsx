@@ -32,27 +32,29 @@ function ProjectCard({ project }: { project: Project }) {
               <ExternalLinkIcon />
             </a>
           )}
-          <a
-            href={project.html_url}
-            target="_blank"
-            rel="noreferrer"
-            aria-label={`${project.name} on GitHub`}
-            className="transition hover:text-accent"
-          >
-            <GitHubIcon className="size-5" />
-          </a>
+          {project.html_url && (
+            <a
+              href={project.html_url}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${project.name} on GitHub`}
+              className="transition hover:text-accent"
+            >
+              <GitHubIcon className="size-5" />
+            </a>
+          )}
         </div>
       </div>
-      {project.description && (
-        <p className="mt-3 flex-1 text-sm leading-relaxed text-zinc-400">{project.description}</p>
-      )}
       {video && (
         <video
           controls
           preload="metadata"
           src={video}
-          className="mt-4 w-full rounded-lg border border-zinc-800"
+          className="mt-4 aspect-video w-full rounded-lg border border-zinc-800 bg-black object-contain"
         />
+      )}
+      {project.description && (
+        <p className="mt-4 flex-1 text-sm leading-relaxed text-zinc-400">{project.description}</p>
       )}
       <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-zinc-500">
         {project.language && langColor && (

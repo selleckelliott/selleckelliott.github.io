@@ -36,5 +36,6 @@ export const site = {
   repoMedia: {
     BodyBuilding: '/media/BodybuildingProjectRecording.mp4',
     Archeology: '/media/archeologyappvideo.mp4',
+    CustodiFlow: '/media/custodiflow-demo.mp4',
   } as Record<string, string>,
 }

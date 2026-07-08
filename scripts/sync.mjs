@@ -30,6 +30,20 @@ const PORTFOLIO_TOPIC = 'portfolio'
 const MODELS_URL = 'https://models.github.ai/inference/chat/completions'
 const MODELS_MODEL = 'openai/gpt-4o-mini'
 const MIN_RESUME_TEXT_CHARS = 200
+const HIDDEN_PROJECT_NAMES = new Set(['LatinLearningAppPrototype'])
+const MANUAL_PROJECTS = [
+  {
+    name: 'CustodiFlow',
+    html_url: null,
+    description:
+      'QR-based supply tracking for janitorial teams. CustodiFlow lets crews scan supply closets, moves inventory changes through an event-driven reorder board, and gives managers purchasing exports, analytics, and AI-assisted usage insights.',
+    language: 'TypeScript',
+    topics: [PORTFOLIO_TOPIC],
+    stargazers_count: 0,
+    homepage: null,
+    updated_at: '2026-07-08T00:04:32Z',
+  },
+]
 
 const EMPTY_CONTENT = {
   generatedAt: null,
@@ -108,9 +122,14 @@ async function fetchProjects() {
     if (batch.length < 100) break
   }
 
-  return repos
-    .filter((r) => !r.archived && Array.isArray(r.topics) && r.topics.includes(PORTFOLIO_TOPIC))
-    .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+  const syncedProjects = repos
+    .filter(
+      (r) =>
+        !r.archived &&
+        !HIDDEN_PROJECT_NAMES.has(r.name) &&
+        Array.isArray(r.topics) &&
+        r.topics.includes(PORTFOLIO_TOPIC),
+    )
     .map((r) => ({
       name: r.name,
       html_url: r.html_url,
@@ -121,6 +140,13 @@ async function fetchProjects() {
       homepage: r.homepage || null,
       updated_at: r.updated_at,
     }))
+
+  const byName = new Map()
+  for (const project of [...MANUAL_PROJECTS, ...syncedProjects]) {
+    if (!byName.has(project.name)) byName.set(project.name, project)
+  }
+
+  return [...byName.values()].sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
 }
 
 // ---------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 /** A GitHub repository surfaced on the Projects grid. */
 export interface Project {
   name: string
-  html_url: string
+  html_url: string | null
   description: string | null
   language: string | null
   topics: string[]

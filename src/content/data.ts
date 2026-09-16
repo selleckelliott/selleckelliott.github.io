@@ -5,11 +5,11 @@
  */
 export const site = {
   name: 'Selleck Elliott',
-  tagline: 'C#/.NET developer building AI-powered systems.',
+  tagline: 'Backend engineer. C#/.NET fintech APIs and Python/FastAPI systems.',
   about: [
-    "I'm Selleck — a software developer working primarily in C# and .NET, with a growing focus on AI engineering. I came to software from a background in business and financial analysis, which taught me to care about the why behind every system: the costs, the constraints, and the decisions the software is actually supposed to improve.",
-    'Since completing the TrueCoders software development program, I\u2019ve built a portfolio that runs from classic design-pattern deep dives in C# to full applications — and most recently freightbid_agent, a hybrid AI decision system for freight dispatch that combines rule-based optimization, ML prediction, and agent planning.',
-    'This site keeps itself up to date: a weekly job pulls my latest GitHub projects and re-reads my resume, so what you see here tracks what I\u2019m actually building.',
+    "I'm a backend engineer working on C#/.NET REST APIs for loan servicing, payments, compliance, and litigation workflows at GoldPoint Systems. My four years in financial services span backend engineering and earlier SQL and portfolio-modeling tooling for an advisory desk.",
+    'My Python/FastAPI projects focus on testable domain models, optimization, and measurable outcomes. FreightBid combines hexagonal architecture, OR-Tools, and calibrated machine learning; its synthetic-market benchmarks and 600-test suite make the results inspectable.',
+    'Explore the source code and benchmark artifacts below, or open the CustodiFlow staging prototype to see its inventory and purchasing workflows.',
   ],
   social: {
     github: 'https://github.com/selleckelliott',

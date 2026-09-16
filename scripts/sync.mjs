@@ -31,16 +31,22 @@ const MODELS_URL = 'https://models.github.ai/inference/chat/completions'
 const MODELS_MODEL = 'openai/gpt-4o-mini'
 const MIN_RESUME_TEXT_CHARS = 200
 const HIDDEN_PROJECT_NAMES = new Set(['LatinLearningAppPrototype'])
+// Keep the portfolio case study aligned with the committed benchmark and README,
+// even when the repository's short About description lags behind a release.
+const PROJECT_DESCRIPTIONS = {
+  freightbid_agent:
+    'Python/FastAPI freight bidding and dispatch engine. Expected-value bidding improved realized profit 32.8% versus the best fixed policy in synthetic-market simulation ($314 versus $236/load), outperforming fixed bidding in 10/10 broker-quality scenarios. Hexagonal architecture, OR-Tools optimization, scikit-learn models, and 600 passing automated tests.',
+}
 const MANUAL_PROJECTS = [
   {
     name: 'CustodiFlow',
     html_url: null,
     description:
-      'QR-based supply tracking for janitorial teams. CustodiFlow lets crews scan supply closets, moves inventory changes through an event-driven reorder board, and gives managers purchasing exports, analytics, and AI-assisted usage insights.',
+      'Multi-tenant inventory SaaS prototype using FastAPI and PostgreSQL. QR scanning drives inventory events and reorder workflows; managers compare supplier pricing and export purchase lists. Staging on Render and Vercel uses seeded demo data.',
     language: 'TypeScript',
     topics: [PORTFOLIO_TOPIC],
     stargazers_count: 0,
-    homepage: null,
+    homepage: 'https://custodiflow-staging.vercel.app',
     updated_at: '2026-07-08T00:04:32Z',
   },
 ]
@@ -133,7 +139,7 @@ async function fetchProjects() {
     .map((r) => ({
       name: r.name,
       html_url: r.html_url,
-      description: r.description ?? null,
+      description: PROJECT_DESCRIPTIONS[r.name] ?? r.description ?? null,
       language: r.language ?? null,
       topics: r.topics ?? [],
       stargazers_count: r.stargazers_count ?? 0,

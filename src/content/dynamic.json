@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-07-08T05:28:16.351Z",
+  "generatedAt": "2026-09-16T00:00:00.000Z",
   "projects": [
     {
       "name": "CustodiFlow",
       "html_url": null,
-      "description": "QR-based supply tracking for janitorial teams. CustodiFlow lets crews scan supply closets, moves inventory changes through an event-driven reorder board, and gives managers purchasing exports, analytics, and AI-assisted usage insights.",
+      "description": "Multi-tenant inventory SaaS prototype using FastAPI and PostgreSQL. QR scanning drives inventory events and reorder workflows; managers compare supplier pricing and export purchase lists. Staging on Render and Vercel uses seeded demo data.",
       "language": "TypeScript",
       "topics": [
         "portfolio"
       ],
       "stargazers_count": 0,
-      "homepage": null,
+      "homepage": "https://custodiflow-staging.vercel.app",
       "updated_at": "2026-07-08T00:04:32Z"
     },
     {
       "name": "freightbid_agent",
       "html_url": "https://github.com/selleckelliott/freightbid_agent",
-      "description": "Hybrid AI decision engine for hotshot freight dispatch and bidding - rule-based scoring, OR-Tools route optimization, calibrated ML win/payment models, and risk-aware EV bidding. Explainable, benchmarked, production-hardened. AI-engineering portfolio project (Phases 1-7 complete, 556 tests).",
+      "description": "Python/FastAPI freight bidding and dispatch engine. Expected-value bidding improved realized profit 32.8% versus the best fixed policy in synthetic-market simulation ($314 versus $236/load), outperforming fixed bidding in 10/10 broker-quality scenarios. Hexagonal architecture, OR-Tools optimization, scikit-learn models, and 600 passing automated tests.",
       "language": "Python",
       "topics": [
         "calibration",
@@ -46,65 +46,60 @@
       "start": "2024",
       "end": "Present",
       "highlights": [
-        "Designed and deployed production REST APIs supporting loan servicing, payments, compliance, and litigation workflows in a regulated fintech environment.",
-        "Delivered a backend feature generating USD 30K in revenue while reducing downstream legal risk for clients.",
-        "Refactored duplicated logic into shared abstractions, reducing future development time by approximately 85 percent across related services.",
-        "Developed Salesforce-integrated APIs enabling real-time synchronization of customer payment data and account updates across systems.",
-        "Resolved complex edge-case defects identified in QA and production, improving system stability and reducing recurring failures.",
-        "Worked across backend services, database logic, QA workflows, and product requirements to deliver reliable features in sprint-based development."
+        "Designed and deployed production REST APIs in C#/.NET supporting loan servicing, payments, compliance, and litigation workflows for a regulated fintech platform.",
+        "Delivered a backend feature generating $30K in incremental revenue while reducing downstream legal risk through improved compliance data handling.",
+        "Consolidated duplicated service logic into shared abstractions and reusable design patterns.",
+        "Integrated Salesforce through REST/JSON APIs and event-driven webhooks to synchronize customer payment data, account updates, and CRM records.",
+        "Diagnosed and resolved QA and production defects using SQL Server queries and automated test suites, improving stability and reducing recurring failures."
       ]
     },
     {
-      "title": "Financial Advisor",
+      "title": "Technical Financial Advisor / Software Engineer",
       "company": "CUSO Financial",
       "location": "",
       "start": "2022",
       "end": "2024",
       "highlights": [
-        "Grew assets under management by USD 6MM in six months through portfolio strategy, client trust-building, and disciplined follow-up.",
-        "Built strong working knowledge of financial systems, risk management, client data, and compliance expectations.",
-        "Transitioned into software engineering with domain experience in financial services and a practical understanding of user needs in regulated industries."
+        "Developed internal advisory tooling that automated client portfolio modeling previously rebuilt by hand for each account.",
+        "Wrote SQL queries and scripted spreadsheet models to join and reshape client, account, and holdings data for portfolio analysis.",
+        "Integrated credit union account and holdings data into the advisory desk's analysis and reporting.",
+        "Applied that tooling to grow assets under management by $6MM in six months."
       ]
     }
   ],
   "skills": [
-    "C Sharp",
+    "C#",
     ".NET",
-    "SQL",
+    "ASP.NET Core",
     "Python",
-    "REST APIs",
-    "API integrations",
     "FastAPI",
-    "service-layer architecture",
-    "backend validation",
+    "SQL",
+    "T-SQL",
+    "REST APIs",
+    "hexagonal architecture",
     "Domain-Driven Design",
     "SOLID",
-    "modular systems",
-    "design patterns",
-    "event-driven concepts",
+    "webhooks",
+    "Swagger/OpenAPI",
     "SQL Server",
     "PostgreSQL",
     "MySQL",
-    "ML-assisted scoring",
-    "simulation",
-    "route optimization",
+    "query optimization",
+    "Salesforce integrations",
     "OR-Tools",
-    "benchmark harnesses",
-    "Git",
-    "Swagger",
-    "Postman",
-    "Docker",
+    "Azure",
     "Azure DevOps",
-    "Render",
-    "Vercel",
-    "CI/CD exposure",
-    "automated testing workflows",
-    "technical documentation"
+    "Docker",
+    "Git",
+    "GitHub Actions",
+    "CI/CD",
+    "automated testing",
+    "pytest"
   ],
   "education": [
     {
       "institution": "Western Governors University",
-      "credential": "Bachelor’s - Business Marketing Management",
+      "credential": "Bachelor\u2019s - Business Marketing Management",
       "year": "2019",
       "details": ""
     }

@@ -42,7 +42,7 @@ const MANUAL_PROJECTS = [
     name: 'CustodiFlow',
     html_url: null,
     description:
-      'Multi-tenant inventory SaaS prototype using FastAPI and PostgreSQL. QR scanning drives inventory events and reorder workflows; managers compare supplier pricing and export purchase lists. Staging on Render and Vercel uses seeded demo data.',
+      'Multi-tenant inventory SaaS demonstration using FastAPI and PostgreSQL. QR scanning drives inventory events and reorder workflows; the prototype supports supplier price comparisons and purchase-list exports. The demonstration environment on Render and Vercel uses seeded tenant data.',
     language: 'TypeScript',
     topics: [PORTFOLIO_TOPIC],
     stargazers_count: 0,

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-16T00:00:00.000Z",
+  "generatedAt": "2026-09-23T00:00:00.000Z",
   "projects": [
     {
       "name": "CustodiFlow",
       "html_url": null,
-      "description": "Multi-tenant inventory SaaS prototype using FastAPI and PostgreSQL. QR scanning drives inventory events and reorder workflows; managers compare supplier pricing and export purchase lists. Staging on Render and Vercel uses seeded demo data.",
+      "description": "Multi-tenant inventory SaaS demonstration using FastAPI and PostgreSQL. QR scanning drives inventory events and reorder workflows; the prototype supports supplier price comparisons and purchase-list exports. The demonstration environment on Render and Vercel uses seeded tenant data.",
       "language": "TypeScript",
       "topics": [
         "portfolio"
@@ -46,15 +46,15 @@
       "start": "2024",
       "end": "Present",
       "highlights": [
-        "Designed and deployed production REST APIs in C#/.NET supporting loan servicing, payments, compliance, and litigation workflows for a regulated fintech platform.",
+        "Designed and deployed C#/.NET REST APIs for loan servicing, payments, and compliance within an enterprise lending platform reporting 34.6 million loans serviced in the past year.",
         "Delivered a backend feature generating $30K in incremental revenue while reducing downstream legal risk through improved compliance data handling.",
-        "Consolidated duplicated service logic into shared abstractions and reusable design patterns.",
+        "Centralized record lookup, logging, and error handling in a reusable helper supporting seven record types across six litigation and compliance API endpoints.",
         "Integrated Salesforce through REST/JSON APIs and event-driven webhooks to synchronize customer payment data, account updates, and CRM records.",
         "Diagnosed and resolved QA and production defects using SQL Server queries and automated test suites, improving stability and reducing recurring failures."
       ]
     },
     {
-      "title": "Technical Financial Advisor / Software Engineer",
+      "title": "Financial Advisor",
       "company": "CUSO Financial",
       "location": "",
       "start": "2022",

@@ -7,7 +7,7 @@ export const site = {
   name: 'Selleck Elliott',
   tagline: 'Backend engineer. C#/.NET fintech APIs and Python/FastAPI systems.',
   about: [
-    "I'm a backend engineer working on C#/.NET REST APIs for loan servicing, payments, compliance, and litigation workflows at GoldPoint Systems. My four years in financial services span backend engineering and earlier SQL and portfolio-modeling tooling for an advisory desk.",
+    "I'm a backend engineer working on C#/.NET REST APIs for loan servicing, payments, compliance, and litigation workflows at GoldPoint Systems. Previously, I worked in financial services as a Technical Financial Advisor, developing SQL and portfolio-modeling tools for an advisory desk.",
     'My Python/FastAPI projects focus on testable domain models, optimization, and measurable outcomes. FreightBid combines hexagonal architecture, OR-Tools, and calibrated machine learning; its synthetic-market benchmarks and 600-test suite make the results inspectable.',
     'Explore the source code and benchmark artifacts below, or open the CustodiFlow staging prototype to see its inventory and purchasing workflows.',
   ],
